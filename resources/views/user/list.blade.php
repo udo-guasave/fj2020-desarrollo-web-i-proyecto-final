@@ -1,7 +1,13 @@
-<h1>Vista Users</h1>
-<p>Esta vista es Users</p>
+@extends('layouts.app')
 
-    <table border="1" cellspacing="0" cellpadding="5">
+@section('content')
+<div class="container">
+    <h1>
+        Vista Users <small class="text-muted">Esta vista es Users</small>
+    </h1>
+    
+
+    <table class="table table-bordered table-hover table-striped">
         <thead>
             <tr>
                 <th>FIRSTNAME</th>
@@ -18,8 +24,14 @@
                 <td>{{ $usuario->lastname }}</td>
                 <td>{{ $usuario->name }}</td>
                 <td>{{ $usuario->email }}</td>
-                <td>&nbsp;</td>
+                <td>
+                    <a href="{{ url("user/edit/$usuario->id") }}">
+                        Editar
+                    </a>
+                </td>
             </tr>
         @endforeach
         </tbody>
     </table>
+</div>
+@endsection
