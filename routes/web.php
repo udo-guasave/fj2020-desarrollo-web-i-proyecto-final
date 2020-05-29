@@ -23,6 +23,7 @@ Auth::routes();
 Route::middleware(['auth','web'])->group(function () {
     Route::get('user/list', 'UserController@index');
     Route::get('user/edit/{id}', 'UserController@edit');
+    Route::resource('alumno', 'AlumnoController');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
